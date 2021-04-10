@@ -1,4 +1,4 @@
-#Wallet Manager
+# Wallet Manager
 Fengwei Ban	
 Zeyu Cheng
 Katie Nguyen
