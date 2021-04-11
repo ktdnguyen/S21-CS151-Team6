@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 public class MainApp extends Application{
 
 	public static void main(String[] args) {
+		// setting up the DB with sql script in the lib
+		
+		
 		launch(args);
 	}
 
