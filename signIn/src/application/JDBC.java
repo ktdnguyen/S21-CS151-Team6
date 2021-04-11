@@ -1,16 +1,17 @@
 package application;
-
 import java.sql.*;
 
 public class JDBC {
 	
-	private static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/walletmanager?useSSL=false";
-	private static final String DATABASE_USERNAME = "root";
-	private static final String DATABASE_PASSWORD = "Bobby";
+	private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/walletmanager?useSSL=false";
+	
+	// By default, database username is "root", user must input their correct values for DB_USERNAME and DB_PASSWORD
+	private static final String DB_USERNAME = "root";
+	private static final String DB_PASSWORD = "Bobby";
 	private static final String INSERT_QUERY = "INSERT INTO user (user_name, password) VALUES (?, ?)";
 
 	
-	public void insertRecord(String name, String  password) throws SQLException {
+	public void insertRecord(String username, String  password) throws SQLException {
 			
 			// load and register JDBC driver for MySQL
 			try {
@@ -23,11 +24,11 @@ public class JDBC {
 	        // Step 1: Establishing a Connection and 
 			// try-with-resource statement will auto close the connection.
 	        try (Connection connection = DriverManager
-	            .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+	            .getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
 	
 	            // Step 2:Create a statement using connection object
 	            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
-	            preparedStatement.setString(1, name);
+	            preparedStatement.setString(1, username);
 	            preparedStatement.setString(2, password);
 	
 	            System.out.println(preparedStatement);

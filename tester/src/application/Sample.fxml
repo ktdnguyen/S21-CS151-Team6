@@ -2,6 +2,6 @@
 	
 <?import javafx.scene.layout.StackPane?>
 	
-<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegistrationController">
 	<!-- TODO Add Nodes -->
 </StackPane>

@@ -10,7 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
 
-public class SampleController {
+public class RegistrationController {
 	
 
     @FXML
@@ -30,14 +30,14 @@ public class SampleController {
     	System.out.println(nameField.getText());
     	System.out.println(passwordField.getText());
     	if(nameField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
-                    "Please enter your name");
+            showAlert(Alert.AlertType.ERROR, owner, "Error", 
+                    "Please enter a username");
             return;
         }
     	
     	
         if(passwordField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
+            showAlert(Alert.AlertType.ERROR, owner, "Error", 
                     "Please enter a password");
             return;
         }
@@ -48,8 +48,8 @@ public class SampleController {
     	JDBC jdbcDao = new JDBC();
     	jdbcDao.insertRecord(name, password);
     	
-    	showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!", 
-                "Welcome " + nameField.getText());
+    	showAlert(Alert.AlertType.CONFIRMATION, owner, "User successfully registered", 
+                "Registration success\n Welcom: " + nameField.getText());
     }
     
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
