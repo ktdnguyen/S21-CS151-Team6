@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class JDBC {
 	
-	private static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/walletmanager?serverTimezone=EST5EDT\\";
+	private static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/walletmanager?useSSL=false";
 	private static final String DATABASE_USERNAME = "root";
 	private static final String DATABASE_PASSWORD = "Bobby";
 	private static final String INSERT_QUERY = "INSERT INTO user (user_name, password) VALUES (?, ?)";

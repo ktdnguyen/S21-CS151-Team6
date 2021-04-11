@@ -24,17 +24,18 @@
             <Insets bottom="10.0" />
          </padding>
       </Label>
-      <TextField alignment="CENTER" promptText="Username">
+      <TextField fx:id="nameField" alignment="CENTER" promptText="Username">
          <VBox.margin>
             <Insets left="150.0" right="150.0" />
          </VBox.margin>
       </TextField>
-      <PasswordField alignment="CENTER" promptText="Password">
+      <PasswordField fx:id="passwordField" alignment="CENTER" promptText="Password">
          <VBox.margin>
             <Insets left="150.0" right="150.0" />
          </VBox.margin>
       </PasswordField>
-      <Button mnemonicParsing="false" text="Submit">
+      <Button fx:id="submitButton" mnemonicParsing="false" text="Submit"
+      	onAction='#register'>
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
