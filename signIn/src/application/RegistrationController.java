@@ -23,6 +23,10 @@ public class RegistrationController {
     private Button submitButton; 
     
     @FXML
+    // executed when user presses Submit button on the Registration page
+    // User must input a username and password
+    // new user is added to the "user" table in the walletmanager database
+    // the user_id is automatically generated
     public void register(ActionEvent event) throws SQLException{
     
     	Window owner = submitButton.getScene().getWindow();
@@ -49,7 +53,7 @@ public class RegistrationController {
     	jdbcDao.insertRecord(name, password);
     	
     	showAlert(Alert.AlertType.CONFIRMATION, owner, "User successfully registered", 
-                "Registration success\n Welcom: " + nameField.getText());
+                "Registration success\n Welcome: " + nameField.getText());
     }
     
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {

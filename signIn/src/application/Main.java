@@ -1,3 +1,5 @@
+// Start app from MainApp
+
 package application;
 	
 import javafx.application.Application;

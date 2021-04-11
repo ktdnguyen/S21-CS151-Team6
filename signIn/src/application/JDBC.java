@@ -13,7 +13,7 @@ public class JDBC {
 	
 	public void insertRecord(String username, String  password) throws SQLException {
 			
-			// load and register JDBC driver for MySQL
+			// load JDBC driver for MySQL
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 			} catch (ClassNotFoundException e1) {
@@ -21,21 +21,19 @@ public class JDBC {
 				e1.printStackTrace();
 			}
 			
-	        // Step 1: Establishing a Connection and 
-			// try-with-resource statement will auto close the connection.
+	        // Establish connection
 	        try (Connection connection = DriverManager
 	            .getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
 	
-	            // Step 2:Create a statement using connection object
+	            // use connection obj to write statement
 	            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)) {
 	            preparedStatement.setString(1, username);
 	            preparedStatement.setString(2, password);
 	
 	            System.out.println(preparedStatement);
-	            // Step 3: Execute the query or update query
+	            // execute the prepared query
 	            preparedStatement.executeUpdate();
 	        } catch (SQLException e) {
-	            // print SQL exception information
 	            printSQLException(e);}
 	        }
 	        
@@ -56,7 +54,6 @@ public class JDBC {
 	    }
 	        
 		public static void main(String[] args) {
-			// TODO Auto-generated method stub
 	
 		}
 
