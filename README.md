@@ -1,4 +1,6 @@
 # Wallet Manager
-Fengwei Ban	
-Zeyu Cheng
-Katie Nguyen
+by Fengwei Ban, Zeyu Cheng, and Katie Nguyen /n/n
+## Procedure
+To start this program, "setup_db.sql" must be run to set up the database. /n
+
+The user must set the username "DB_USERNAME" and the password "DB_PASSWORD" for their SQL server in the JDBC class. /n
